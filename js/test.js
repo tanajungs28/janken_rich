@@ -6,8 +6,19 @@
 // let img = document.getElementById("image_place");
 // img.src = ;
 
-var n = 0;
-m = 1;
+$(function () {
+    $('.js-close').click(function () {
+      $('.modal-window').fadeOut(600);
+      $('.pic_jibun, .pic_aite').fadeIn();
+    });
+  });
+
+
+
+var n = 0; //説明文を進めるための変数
+var m = 1; //じゃんけんのコマンド選択のための変数
+
+
 $("button.Abutton").on("click", function(){
     n = n+1;
     console.log(n);
@@ -62,7 +73,7 @@ $("button.Abutton").on("click", function(){
                 $("h2.command3").html(command3);
                 $("h2.command4").html(choose+command4); 
                 m = 0;  
-            } else if(m === 6){
+            } else if(m === 5){
                 m = 0;
             }
         })

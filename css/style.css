@@ -3,20 +3,59 @@
     height: 800px;
     margin-left: auto;
     margin-right: auto;
-    /* position: relative; */
-}
+    background-color: black;
+  }
 
 .backpic_gameboy{
-  background-image:url(../img/pokemon.png),url(../img/switch.jpg);
+  background-image:url(../img/pokemon.png),url(../img/NintendoSwitch-fix.png);
   background-repeat: no-repeat;
   background-position: 50% 23.5%,50% 0;
   height: 800px;
+  /* margin-top: 5%; */
   position: relative;
+  background-color: #222;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
 
-/* .title {
-    text-align: center;
-} */
+/* モーダルウィンドウ */
+.modal-window {
+  position: fixed;
+  top: 33%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 640px;
+  height: 346px;
+  background-color: #dfdddd;
+  border-radius: 5px;
+  z-index: 11;
+  padding: 2rem;
+}
+/* 閉じるボタン */
+.button-close {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  padding: 1em;
+  background-color: #c96931;
+  color: #eaeaea;
+  border-radius: 20rem;
+  cursor: pointer;
+}
+.jizen_setumei {
+  position: absolute;
+  border: #333333 1px solid;
+  background-color: white;
+  text-align: center;
+  width: 600px;
+  top: 60%;
+  margin-left: 2%;
+  margin-right: 15%;
+  /* left: 10%; */
+
+}
+
 
 .your_name {
   position:absolute;
@@ -78,6 +117,7 @@
 }
 
 .pic_aite {
+  display: none;
     position:absolute;
     top: 120px;
     right: 390px;
@@ -89,7 +129,7 @@
 
 @keyframes slideinRight {
     from {
-      transform: translateX(100%);
+      transform: translateX(120%);
     }
     to {
       transform: translateX(0);
@@ -97,18 +137,18 @@
   }
 
 .pic_jibun {
-    position:absolute;
+  display: none;
+  position:absolute;
     top: 230px;
     left: 390px;
     animation: slideinLeft 3s;
     height: 150px;
     width: 150px;
-
 }
 
 @keyframes slideinLeft {
     from {
-      transform: translateX(-200px);
+      transform: translateX(-120%);
     }
     to {
       transform: translateX(0);
@@ -200,6 +240,35 @@
   top: 310px;
   left: 142px;
   border-radius:100%;
+}
+
+/* 体力ゲージ装飾 */
+.health1{
+  position: absolute;
+  border: 1px solid #333;
+  background: #999;
+  width: 124px;
+  margin: 10px 0;
+  top: 161px;
+  left: 430px;
+}
+.health1_guage{
+  width: 100%;
+  height: 10px;
+  background: #78d461;
+}
+.health2{
+  position: absolute;
+  border: 1px solid #333;
+  background: #999;
+  width: 124px;
+  margin: 10px 0;
+  top: 305px;
+  left: 732px;
+}
+.health2>div{
+  height: 10px;
+  background: #78d461;
 }
 
 

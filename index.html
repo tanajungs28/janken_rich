@@ -6,16 +6,20 @@
     <title>じゃんけんアプリ</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-<div class="all">
+<body class="all">
+<div>
 
         <div class="backpic_gameboy">
-
-            <!-- タイトル部 -->
-            <!-- <div class="title">
-                <h1>ぱちもん</h1>
-            </div> -->
     
+            <!-- 最初のモーダル設定 -->
+            <div class="modal-window">
+                <button class="js-close button-close">ゲームスタート</button>
+                <div class="jizen_setumei">
+                    <p>ゲーム画面中の説明文は「A」ボタンを進めることができます。</p>
+                    <p>途中で発生するじゃんけんの選択は方向キーを押すと選択が変えられます。</p>
+                </div>
+            </div>
+
             <div class="your_name">
                 <p>ロケット団</p>
             </div>
@@ -39,6 +43,13 @@
             <button class="Ubutton" type="button">△</button>
             <button class="Dbutton" type="button">▽</button>
 
+            <!-- 体力ゲージ -->
+            <div class="health1">
+                <div class="health1_guage"></div>
+            </div>
+            <div class="health2">
+                <div style="width:22%"></div>
+            </div>
 
 
             <!-- 説明画面表示 -->
