@@ -7,46 +7,64 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<div class="all">
 
-    <div class="all">
+        <div class="backpic_gameboy">
 
-        <!-- タイトル部 -->
-        <div class="title">
-            <h1>ぱちもん</h1>
+            <!-- タイトル部 -->
+            <!-- <div class="title">
+                <h1>ぱちもん</h1>
+            </div> -->
+    
+            <div class="your_name">
+                <p>ロケット団</p>
+            </div>
+            <div class="my_name">
+                <p>たなじゅん</p>
+            </div>
+    
+    
+            <!-- 表示画像（自分、対戦相手、じゃんけんの手） -->
+            <img class="pic_aite" src="./img/human.png" alt="">               
+            <img class="pic_jibun" src="./img/human.png" alt="">
+            <img src="" alt="" id="myhand">
+            <img src="" alt="" id="yourhand">
+            <!-- ボタン（A,B,X,Y,上下左右の方向キー） -->
+            <button class="Abutton" type="button">A</button>
+            <button class="Bbutton" type="button">B</button>
+            <button class="Xbutton" type="button">X</button>
+            <button class="Ybutton" type="button">Y</button>
+            <button class="Rbutton" type="button">▷</button>
+            <button class="Lbutton" type="button">◁</button>
+            <button class="Ubutton" type="button">△</button>
+            <button class="Dbutton" type="button">▽</button>
+
+
+
+            <!-- 説明画面表示 -->
+             <div class="exp_area">
+                <h2 class="your_output" style="color: black; display: inline-block; _display: inline;"></h2>
+                <h2 class="exp" style="color: black; display: inline-block; _display: inline;">ロケット団のしたっぱが勝負をしかけてきた！！！</h2>
+             </div>
+             <!-- コマンド選択 -->
+            <div class="chose_command_top">
+                <h2 class="command1" style="color: black; display: inline-block; _display: inline;"></h2>
+                <h2 class="command2" style="color: black; display: inline-block; _display: inline;"></h2>
+            </div>    
+            <div class="chose_command_buttom">
+                <h2 class="command3" style="color: black; display: inline-block; _display: inline;"></h2>    
+                <h2 class="command4" style="color: black; display: inline-block; _display: inline;"></h2>      
+            </div>
+    
+            <!-- jquery指定 -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+            <!-- jsファイル指定 -->
+            <script src="js/test.js"></script>
+    
+    
         </div>
+</div>
 
-        <div class="your_name">
-            <p>ロケット団</p>
-        </div>
-        <div class="my_name">
-            <p>たなじゅん</p>
-        </div>
-
-
-        <!-- 表示画像 -->
-        <img class="pic_aite" src="./img/human.png" alt="">               
-        <img class="pic_jibun" src="./img/human.png" alt="">
-        <img src="" alt="" id="myhand">
-        <img src="" alt="" id="yourhand">
-
-        <!-- 説明画面表示 -->
-         <div class="exp_area">
-            <h2 class="your_output" style="color: black; display: inline-block; _display: inline;"></h2>
-            <h2 class="exp" style="color: black; display: inline-block; _display: inline;">ロケット団のしたっぱが勝負をしかけてきた！！！</h2>
-            <h2 class="command1" style="color: black; display: inline-block; _display: inline;"></h2>
-            <h2 class="command2" style="color: black; display: inline-block; _display: inline;"></h2>
-            <h2 class="command3" style="color: black; display: inline-block; _display: inline;"></h2>    
-            <h2 class="button" style="color: black; display: inline-block; _display: inline;">▼</h2>
-         </div>
-
-
-        <!-- jquery指定 -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <!-- jsファイル指定 -->
-        <script src="js/test.js"></script>
-
-
-    </div>
 
 
 </body>
