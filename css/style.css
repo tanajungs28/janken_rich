@@ -1,3 +1,4 @@
+/* 全体のサイズと背景色設定 */
 .all {
     width: 1200px;
     height: 800px;
@@ -6,6 +7,7 @@
     background-color: black;
   }
 
+/* ゲーム機のイラストとポケモンの戦闘背景 */
 .backpic_gameboy{
   background-image:url(../img/pokemon.png),url(../img/NintendoSwitch-fix.png);
   background-repeat: no-repeat;
@@ -243,7 +245,7 @@
 }
 
 /* 体力ゲージ装飾 */
-.health1{
+.your_health{
   position: absolute;
   border: 1px solid #333;
   background: #999;
@@ -252,12 +254,12 @@
   top: 161px;
   left: 430px;
 }
-.health1_guage{
-  width: 100%;
+.your_health_guage{
+  /* width: 100%; */
   height: 10px;
   background: #78d461;
 }
-.health2{
+.my_health{
   position: absolute;
   border: 1px solid #333;
   background: #999;
@@ -266,7 +268,8 @@
   top: 305px;
   left: 732px;
 }
-.health2>div{
+.my_health_guage{
+  /* width: 100%; */
   height: 10px;
   background: #78d461;
 }
