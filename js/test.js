@@ -7,39 +7,43 @@
 // img.src = ;
 
 // 変数の初期設定
-var your_percent = 100;
-var my_percent = 100;
+var your_percent = 100;     //相手の体力ゲージ初期値
+var my_percent = 100;       //自分の体力ゲージ初期値
+var n = 0;                  //説明文を進めるための変数
+var m = 1;                  //じゃんけんのコマンド選択のための変数
+var exp1 = "相手はじゃんけんをしたがっているようだ";
+var exp2 = "なにをだしますか？";    
+var command1 = "グー";
+var command2 = "チョキ";
+var command3 = "パー";
+var command4 = "にげる";
+var choose = "▶";
+var output1 = "ロケット団にダメージをあたえた！";
+var output2 = "たなじゅんはダメージをうけた！";
+var output3 = "あいこです";
+const myimage = document.querySelector("#myhand");
+const yourimage = document.querySelector("#yourhand");
+const music = document.querySelector("#bgm_fight");
+const button_sound = document.querySelector("#bgm_button");
+const win_sound = document.querySelector("#bgm_win");
 
-
+//モーダル画面のフェードアウトと登場人物のフェードイン
 $(function () {
     $('.js-close').click(function () {
       $('.modal-window').fadeOut(600);
+      $('.cursol_area').fadeOut(600);
+      $('.Abutton_area').fadeOut(600);
       $('.pic_jibun, .pic_aite').fadeIn();
+      music.play();
     });
   });
 
 
-
-var n = 0; //説明文を進めるための変数
-var m = 1; //じゃんけんのコマンド選択のための変数
-
-
+//Aボタンを押して説明文を進めていくボタンアクション
 $("button.Abutton").on("click", function(){
     n = n+1;
     console.log(n);
-    var exp1 = "相手はじゃんけんをしたがっているようだ";
-    var exp2 = "なにをだしますか？";    
-    var command1 = "グー";
-    var command2 = "チョキ";
-    var command3 = "パー";
-    var command4 = "にげる";
-    var choose = "▶"
-    var output1 = "ロケット団にダメージをあたえた！";
-    var output2 = "たなじゅんはダメージをうけた！";
-    var output3 = "あいこです";
-    const myimage = document.querySelector("#myhand");
-    const yourimage = document.querySelector("#yourhand");
-
+    button_sound.play();
 
     // 説明文を進めるif文による分岐
     if(n === 1){
@@ -51,12 +55,16 @@ $("button.Abutton").on("click", function(){
         $("h2.command2").html(command2);
         $("h2.command3").html(command3);
         $("h2.command4").html(command4); 
+        console.log("nの中身：",n)
+        console.log("mの中身：",m)
 
 //ーーーーーーー 方向キーで出す手の選択ーーーーーーーーーーーーーーーーーーーーーー
         // 右ボタンを押した場合
+        $("button.Rbutton").off("click");
         $("button.Rbutton").on("click", function(){
             m = m+1;
             console.log("右ボタン")
+            console.log("nの中身：",n)
             console.log("mの中身：",m)
             if(m === 1){    //グーを選択
                 $("h2.command1").html(choose+command1);
@@ -87,6 +95,7 @@ $("button.Abutton").on("click", function(){
             }
         })
             // 左ボタンを押した場合
+            $("button.Lbutton").off("click");
             $("button.Lbutton").on("click", function(){
                 m = m-1;
                 console.log("左ボタン")
@@ -120,6 +129,7 @@ $("button.Abutton").on("click", function(){
                 }
             })
             // 上ボタンを押した場合
+            $("button.Ubutton").off("click");
             $("button.Ubutton").on("click", function(){
                 m = m+2;
                 console.log("上ボタン")
@@ -158,9 +168,9 @@ $("button.Abutton").on("click", function(){
                     $("h2.command4").html(command4); 
                     m = 2;
                 }
-
             })
             // 下ボタンを押した場合
+            $("button.Dbutton").off("click");
             $("button.Dbutton").on("click", function(){
                 m = m-2;
                 console.log("下ボタン")
@@ -200,8 +210,6 @@ $("button.Abutton").on("click", function(){
                     m = 3;
                 }
             })
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-
     }else if(n === 4){
         if (m === 1){
             console.log("自分の手：グー")
@@ -329,19 +337,35 @@ $("button.Abutton").on("click", function(){
                 console.log("相手の体力",your_percent)
             }
         }
-        }else if(my_percent > 0 && your_percent > 0){
+    }
+    else if(n === 5 && my_percent > 0 && your_percent > 0){
         $("h2.exp").html("もういちどやりますか？");
         $("h2.your_output").html("");
         myimage.src = "";
         yourimage.src = "";
-        n = 0;
-            }else if(my_percent < 0){
+        n = 0; //説明文を頭に戻すためのリセット
+        m = 1; //次回のコマンド選択を初期位置（グー）にするためのリセット
+        console.log("n,mを初期化")
+            }else if(n === 5 && my_percent < 0){
                 $("h2.exp").html("あなたの負けです");
                 $("h2.your_output").html("");
-            }else if(your_percent < 0){
+                music.pause();
+                $('.pic_jibun').animate({
+                    top: "+=50",
+                    opacity: 0
+                },1000,function(){
+                    $(this).hide(); 
+                })
+            }else if(n === 5 && your_percent < 0){
                 $("h2.exp").html("あなたの勝ちです");
                 $("h2.your_output").html("");
+                music.pause();
+                win_sound.play();
+                $('.pic_aite').animate({
+                    top: "+=50",
+                    opacity: 0
+                },1000,function(){
+                    $(this).hide(); 
+                })
             }
-        
-
 })

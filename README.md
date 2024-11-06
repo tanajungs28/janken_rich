@@ -46,4 +46,10 @@
 
   - 4.cssで体力ゲージを作る方法
    [https://csshtml.work/gauge/]
+
+  - 5.クリックイベントが2回（複数回）動くのは、.on()の重複が原因だった
+   [https://qiita.com/7note/items/213944920efcc0f77de8]
+
+  - 6.JavaScriptで音楽や音声を再生する方法【audioタグ】
+   [https://lorem-co-ltd.com/js-audio/]
     
