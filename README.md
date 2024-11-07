@@ -7,7 +7,7 @@
 - javascriptを活用し、ボタンを押して乱数を生成。乱数の結果によって異なるアクション（今回はじゃんけんの手）が発生するアプリ
 
 ## ③DEMO
-
+https://tanajungs28.github.io/janken_rich/
 
 
 ## ④作ったアプリケーション用のIDまたはPasswordがある場合
